@@ -26,14 +26,18 @@
 		}
 
 		function takePicture() {
-			navigator.camera.getPicture(onTakePictureSuccess, onTakePictureFail, { quality: 50,
+			navigator.camera.getPicture(onTakePictureSuccess, onTakePictureFail, { 
+				quality: 50,
+				targetWidth: 640,
+				targetHeight: 480,
+				saveToPhotoAlbum: false,
     				destinationType: Camera.DestinationType.DATA_URL
 			});			
 		}
 
 		function onTakePictureSuccess(imageData) {
 			originalImageData = imageData;
-   			image.src = "data:image/jpeg;base64," + originalImageData;
+   			originalImageElement.src = "data:image/jpeg;base64," + originalImageData;
 
 			createGlitches(originalImageData);
 		}
