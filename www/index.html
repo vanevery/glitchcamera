@@ -57,7 +57,7 @@
 			glitchedImages[0].imageData = glitchedImages[0].imageData.substr(0, glitchedImages[0].imageData.length - copyFromStart) + copyData + copyData;
 			glitchedImages[0].imageElement = document.createElement('img');
 			glitchedImages[0].imageElement.setAttribute('src', "data:image/jpeg;base64," + glitchedImages[0].imageData);
-			document.appendChild(glitchedImages[0].imageElement);
+			document.body.appendChild(glitchedImages[0].imageElement);
 		}
 
 		window.addEventListener('load', onLoad);
